@@ -20,20 +20,19 @@ install=
 changelog=
 source=("git+file://${PWD}") # "$pkgname-$pkgver.tar.gz"
 noextract=()
-md5sums=()
+sha256sums=('SKIP')
 validpgpkeys=()
 
 #prepare(){}
 
 build() {
-#	cd "$pkgname-$pkgver"
-	pwd
+	cd ".."
 	make
 }
 
 #check() {}
 
 package() {
-#	cd "$pkgname-$pkgver"
-	make DESTDIR="$pkgdir/" install
+	cd ".."
+	make PREFIX="$pkgdir/" install
 }
