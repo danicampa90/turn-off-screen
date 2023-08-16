@@ -13,5 +13,8 @@ fn main() {
 }
 
 fn write_zero_to_file(mut file: File) {
-    file.write_all(&[0x30 /* '0' */, 0x0A]).unwrap();
+    file.write_all(&[
+        0x30 /* '0' in ascii */, 
+        0x0A /* '/n' in ascii */]
+    ).unwrap();
 }
