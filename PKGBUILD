@@ -23,16 +23,12 @@ noextract=()
 sha256sums=('SKIP')
 validpgpkeys=()
 
-#prepare(){}
-
 build() {
-	cd ".."
+	cd "turn_off_display"
 	make
 }
 
-#check() {}
-
 package() {
-	cd ".."
+	cd "turn_off_display"
 	make PREFIX="$pkgdir/" install
 }
